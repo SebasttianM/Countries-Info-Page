@@ -183,8 +183,8 @@ body.dark .grid .card {
   display: -ms-grid;
   display: grid;
   grid-gap: 20px;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
 }
 
 .grid .card .botones .boton {
