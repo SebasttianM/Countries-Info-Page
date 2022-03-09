@@ -239,3 +239,34 @@ nav {
     }
   }
 }
+
+//---
+
+.container-1 {
+  width: 300px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+
+  input#search {
+    width: 300px;
+    height: 50px;
+    background: #fdfdfd;
+    border: 1px solid gray;
+    font-size: 10pt;
+    float: left;
+    color: #63717f;
+    padding-left: 45px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border-radius: 30px;
+    outline: none;
+
+    body.dark & {
+      background: $grisOscuro;
+      box-shadow: $sombraLight;
+      outline: auto;
+    }
+  }
+}
