@@ -15,4 +15,12 @@ const showData = async (country, card) => {
   });
 };
 
+
+
+
+
+
+
+
 export default showData;
+
