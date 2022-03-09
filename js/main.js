@@ -7,8 +7,10 @@ const africa = document.getElementById('Africa');
 const asia = document.getElementById('Asia');
 const europe = document.getElementById('Europe');
 const oceania = document.getElementById('Oceania');
+const searchFind = document.getElementById('search').value;
 
-const urlamericas = 'https://restcountries.com/v3.1/region/americas';
+const urlFind = 'https://restcountries.com/v3.1/name/';
+console.log(urlFind + 'peru');
 
 const searchRegion = 'https://restcountries.com/v3.1/region/';
 
@@ -31,3 +33,21 @@ search(africa, 'africa');
 search(asia, 'asia');
 search(europe, 'europe');
 search(oceania, 'oceania');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault(); //lapagina no se recarga
+  const findCountry = getData(urlFind + searchFind);
+  console.log({ findCountry });
+  const searchTerm = searchFind.value.toLowerCase();
+  if (searchTerm && searchTerm !== '') {
+    showData(findCountry, card);
+    search.value = '';
+  } else {
+    Swal.fire({
+      title: 'Error!',
+      text: 'Debes Escribir algo!!!',
+      icon: 'error',
+      confirmButtonText: 'Aceptar',
+    });
+  }
+});
