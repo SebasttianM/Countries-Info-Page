@@ -7,7 +7,7 @@ const africa = document.getElementById('Africa');
 const asia = document.getElementById('Asia');
 const europe = document.getElementById('Europe');
 const oceania = document.getElementById('Oceania');
-const searchFind = document.getElementById('search').value;
+const searchFind = document.getElementById('search');
 
 const urlFind = 'https://restcountries.com/v3.1/name/';
 console.log(urlFind + 'peru');
@@ -36,18 +36,18 @@ search(oceania, 'oceania');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault(); //lapagina no se recarga
-  const findCountry = getData(urlFind + searchFind);
-  console.log({ findCountry });
-  const searchTerm = searchFind.value.toLowerCase();
-  if (searchTerm && searchTerm !== '') {
-    showData(findCountry, card);
-    search.value = '';
-  } else {
-    Swal.fire({
-      title: 'Error!',
-      text: 'Debes Escribir algo!!!',
-      icon: 'error',
-      confirmButtonText: 'Aceptar',
-    });
-  }
+  const findCountry = getData(urlFind + searchFind.value);
+  console.log(findCountry);
+  showData(findCountry, card);
+  // const searchTerm = searchFind.toLowerCase();
+  // if (searchTerm && searchTerm !== '') {
+  //   searchFind.value = '';
+  // } else {
+  //   Swal.fire({
+  //     title: 'Error!',
+  //     text: 'Debes Escribir algo!!!',
+  //     icon: 'error',
+  //     confirmButtonText: 'Aceptar',
+  //   });
+  // }
 });
