@@ -38,16 +38,16 @@ form.addEventListener('submit', (e) => {
   e.preventDefault(); //lapagina no se recarga
   const findCountry = getData(urlFind + searchFind.value);
   console.log(findCountry);
-  showData(findCountry, card);
-  // const searchTerm = searchFind.toLowerCase();
-  // if (searchTerm && searchTerm !== '') {
-  //   searchFind.value = '';
-  // } else {
-  //   Swal.fire({
-  //     title: 'Error!',
-  //     text: 'Debes Escribir algo!!!',
-  //     icon: 'error',
-  //     confirmButtonText: 'Aceptar',
-  //   });
-  // }
+  const searchTerm = searchFind.value.toLowerCase();
+  if (searchTerm && searchTerm !== '') {
+    showData(findCountry, card);
+    searchFind.value = '';
+  } else {
+    Swal.fire({
+      title: 'Error!',
+      text: 'Debes Escribir algo!!!',
+      icon: 'error',
+      confirmButtonText: 'Aceptar',
+    });
+  }
 });
